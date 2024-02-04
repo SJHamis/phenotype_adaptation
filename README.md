@@ -16,7 +16,7 @@ dose-index ceil(R/4),
 PUP-index mod(R-1,4)+1.
 
 xls file structure:
-Row, dose-index, PUP-index
+Row, dose-index, PUP-index  
 1 1 1  
 2 1 2  
 3 1 3  
