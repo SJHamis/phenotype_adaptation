@@ -1,0 +1,25 @@
+﻿sample,replicate,schedule,0,7,14,21,28
+Vector Control,1,Continuous,241.973,18.264,0,0,0
+Vector Control,2,Continuous,205.561,12.21,0,0,0
+Vector Control,3,Continuous,208.938,6.928,0,0,0
+Vector Control,4,Continuous,218.458,0.176,0,0,0
+Vector Control,5,Continuous,220.24,7.417,0,0,0
+Vector Control,6,Continuous,217.071,0,0,0,0
+Vector Control,1,Intermittent,241.973,15.024,68.298,0,0
+Vector Control,2,Intermittent,205.561,21.239,102.747,0,21.239
+Vector Control,3,Intermittent,208.938,20.327,125.525,0,184.44
+Vector Control,4,Intermittent,218.458,13.622,43.22,0,178.04
+Vector Control,5,Intermittent,220.24,17.342,90.731,0,0
+Vector Control,6,Intermittent,217.071,18.034,72.521,0,0
+V600E,1,Continuous,257.13,224.199,288.106,742.621,1746.251
+V600E,2,Continuous,217.467,227.759,610.518,7015.739,985.254
+V600E,3,Continuous,211.915,316.6,676.512,1381.192,5175.201
+V600E,4,Continuous,249.459,270.677,748.715,1232.52,2913.414
+V600E,5,Continuous,274.99,273.814,556.068,1296.976,3836.639
+V600E,6,Continuous,226.375,270.285,389.719,1630.32,1648.014
+V600E,1,Intermittent,257.13,247.293,364.958,45.177,131.435
+V600E,2,Intermittent,217.467,309,537.894,56.168,87.4
+V600E,3,Intermittent,211.915,324.776,295.143,194.019,41.258
+V600E,4,Intermittent,249.459,280.866,457.352,73.785,1374.069
+V600E,5,Intermittent,274.99,279.496,414.81,31.575,91.562
+V600E,6,Intermittent,226.375,288.497,371.734,43.438,38.633
