@@ -8,7 +8,7 @@ DownloadData;
 %% OBTAIN CONTINUOUS THERAPY GROWTH RATE FOR NORMALISATION
 
 % Read data
-data_gr = readtable("kavran_growthcurve.csv",ReadVariableNames=true);
+data_gr = readtable("kavran_28day_treatments.csv",ReadVariableNames=true);
 
 % Subset to obtain V600E under continuous treatment
 idx = strcmp(data_gr.sample,'V600E') .* strcmp(data_gr.schedule,'Continuous');
@@ -60,12 +60,12 @@ xlim([0.0,30.0]); xticks(0:7:28); grid on;
 xlabel('Time [d]'); ylabel('Cell Count');
 
 % Save
-saveas(gcf,'Fig_S1_V600E_Continuous_Fit.png');
+saveas(gcf,'SupFig_V600E_Continuous_Fit.png');
 
 %% DOSE RESPONSE TO GROWTH RATES
 
 % Read data, convert to long form
-data_dr_raw = readtable("kavran_doseresponse.csv",ReadVariableNames=true);
+data_dr_raw = readtable("kavran_3day_cellcounts.csv",ReadVariableNames=true);
 [m,n] = size(data_dr_raw); n = n - 2;
 
     % Obtain doses
@@ -150,6 +150,7 @@ semilogx(exp(log_dose_vals),fc_addict,'r','LineWidth',2);
 plot([500,500],[0.0,1.0],'k:','LineWidth',2);
 legend('Naive','Addict','Location','SouthWest');
 xlabel('log dose [nM]'); ylabel('fc')
+title('Cell count fold change')
 
 subplot(1,2,2)
 semilogx(exp(log_dose_vals),gr_naive,'b','LineWidth',2); hold on;
@@ -158,7 +159,8 @@ semilogx([min(dose),max(dose)],[0.0,0.0],'k--','LineWidth',2)
 plot([500,500],[-1.0,0.3],'k:','LineWidth',2);
 ylim([-1.0,0.3]);
 legend('Naive','Addict','Location','SouthWest')
-xlabel('log dose [nM]'); ylabel('fc')
+xlabel('log dose [nM]'); ylabel('growth rate (per day)')
+title('Growth rates')
 
 % Save
-saveas(gcf,'Fig_S2_FC_to_GrowthRates.png');
+saveas(gcf,'SupFig_FoldChange_to_GrowthRates.png');

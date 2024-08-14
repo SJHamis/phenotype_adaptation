@@ -1,0 +1,28 @@
+1. To extract growth rates from in vitro data, run 
+generate_fitnessmatrix_and_fig1/invitro_data/ProcessData.m.
+
+2. To generate Figure 1 and the fitness matrix, run
+generate_fitnessmatrix_and_fig1/main_generate_FM_and_fig1.m.
+
+3. To visualise dynamic phenotype distributions (Figure 2c), run 
+main_fig2c.m.
+
+4. To fit model parameter combinations (eta_on, eta_off, FM(0,off), FM(0,on) in manuscript) for 500 nM, run
+fit_500nM_params_BRAFV600E.m.
+
+This file computes sum of square costs between data and simulations generated with various parameter combinations.
+These are saved in workspace_500nM_costs_BRAFV600E.mat
+
+5. To simulate continuous and intermittent treatments for 300 and 500 nM (Fig 2d,e), first run
+main_fig2d_300nM.m, then run
+main_fig2d_500nM.m. 
+
+6. To generate data for Figure 3bd, run
+produce_data_fig3be.m.
+
+7. To visualise Figure 3bd, run
+main_fig3be.m
+
+8. To generate Figure 3ce, run, respectively
+main_fig3c.m and
+main_fig3e.m.

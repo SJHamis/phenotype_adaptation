@@ -1,4 +1,4 @@
-function new_cell_list= updateCellFitness(cell_list,update_opt,drug_c,fitspace,x0_opt,dose_vec)
+function new_cell_list= updateCellFitness(cell_list,update_opt,drug_c,fitspace,dose_vec,gr_x0,gr_x1)
 
     lambda = 1;
     nu = 1;
@@ -31,16 +31,22 @@ function new_cell_list= updateCellFitness(cell_list,update_opt,drug_c,fitspace,x
                         x_idx_prop=x_idx-1;
                     end
                 end
-                if(x_idx_prop>0 && getProliferativeFitness(drug_c,x_idx_prop,fitspace,x0_opt,dose_vec)>getProliferativeFitness(drug_c,x_idx,fitspace,x0_opt,dose_vec))
+                if(x_idx_prop>0 && ...
+                        getProliferativeFitness(drug_c,x_idx_prop,fitspace,dose_vec,gr_x0,gr_x1)...
+                        >getProliferativeFitness(drug_c,x_idx,fitspace,dose_vec,gr_x0,gr_x1))
                    x_idx_new=x_idx_prop;
                 end
     
             elseif(update_opt==4)
                 tmp_dice = rand;
                 if(nu>tmp_dice)
-                    if(x_idx<11 && getProliferativeFitness(drug_c,x_idx+1,fitspace,x0_opt,dose_vec)>getProliferativeFitness(drug_c,x_idx,fitspace,x0_opt,dose_vec))
+                    if(x_idx<11 && ...
+                            getProliferativeFitness(drug_c,x_idx+1,fitspace,dose_vec,gr_x0,gr_x1)...
+                            >getProliferativeFitness(drug_c,x_idx,fitspace,dose_vec,gr_x0,gr_x1))
                         x_idx_new = x_idx+1;
-                    elseif(x_idx>1 && getProliferativeFitness(drug_c,x_idx-1,fitspace,x0_opt,dose_vec)>getProliferativeFitness(drug_c,x_idx,fitspace,x0_opt,dose_vec))
+                    elseif(x_idx>1 && ...
+                            getProliferativeFitness(drug_c,x_idx-1,fitspace,dose_vec,gr_x0,gr_x1)...
+                            >getProliferativeFitness(drug_c,x_idx,fitspace,dose_vec,gr_x0,gr_x1))
                         x_idx_new = x_idx-1;
                     end
                 end
@@ -49,7 +55,7 @@ function new_cell_list= updateCellFitness(cell_list,update_opt,drug_c,fitspace,x
 
             cell_list(c,3)=x_idx_new;
             cell_list(c,4)=(cell_list(c,3)-1)/10;
-            cell_list(c,5) = getProliferativeFitness(drug_c,cell_list(c,3),fitspace,x0_opt,dose_vec);
+            cell_list(c,5) = getProliferativeFitness(drug_c,cell_list(c,3),fitspace,dose_vec,gr_x0,gr_x1);
     end
     new_cell_list=cell_list();
 end
