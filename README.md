@@ -3,7 +3,6 @@ Code base for the upcoming pre-print article
 "Growth rate-driven modelling reveals how phenotypic adaptation drives drug resistance in BRAFV600E-mutant melanoma" by
 Hamis, Browning, Jenner, Villa, Maini and Cassidy. 
 doi: https://doi.org/10.1101/2024.08.14.607616
-Link: https://www.biorxiv.org/content/10.1101/2024.08.14.607616v2
 
 Please cite if using the code.
 
